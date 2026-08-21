@@ -14,3 +14,23 @@ const getTourByID = (req,res)=>{
         res.status(404).json({message: "Tour not found"});
     }
 }
+
+const createTour =  (req,res)=>{
+    const newTour = req.body;
+    tourModel.save(newTour);
+    res.status(201).json(newTour);
+}
+
+const updatedTour = (req,res) => {
+    const id =parseInt(req,params.id);
+    const updatedTour = req.body;
+    tourModel.update(id,updatedTour);
+    res.status(200).json({message: 'Tour updated Successfully'});
+}
+
+module.exports = {
+    getAllTours,
+    getTourByID,
+    createTour,
+    updatedTour
+}
