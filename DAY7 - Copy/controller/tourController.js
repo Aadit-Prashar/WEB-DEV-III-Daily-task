@@ -21,8 +21,8 @@ const createTour =  (req,res)=>{
     res.status(201).json(newTour);
 }
 
-const updatedTour = (req,res) => {
-    const id =parseInt(req,params.id);
+const updatedTour = (req,res) =>{
+    const id =parseInt(req.params.id);
     const updatedTour = req.body;
     tourModel.update(id,updatedTour);
     res.status(200).json({message: 'Tour updated Successfully'});
